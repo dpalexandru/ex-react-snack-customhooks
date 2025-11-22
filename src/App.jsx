@@ -1,14 +1,16 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import useSwitch from './useSwitch'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isOn, toggle] = useSwitch()
 
   return (
     <>
       <h1>React Custom Hooks</h1>
+      <h3>Esercizio 1 (switch toogle)</h3>
+      <p>Il valore è: {isOn ? "ON" : "OFF"}</p>
+      <button onClick={toggle}>{!isOn ? "Accendi" : "Spegni"}</button>
     </>
   )
 }
