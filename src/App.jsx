@@ -1,12 +1,16 @@
 import { useState } from 'react'
 import useSwitch from './useSwitch'
 import useDate from './useDate'
+import useCustomPointer from "./useCustomPointer";
+
 
 
 
 function App() {
   const [isOn, toggle] = useSwitch()
   const [currentDate] = useDate()
+  const customPointer = useCustomPointer("🔥");
+
 
   return (
     <>
@@ -18,6 +22,10 @@ function App() {
 
       <h3>Esercizio 2: Data e ora corrente</h3>
       <p>{currentDate.toLocaleString()}</p>
+
+
+      <h2>Eserxizio 3 cursore mouse personalizzato</h2>
+      {customPointer}
 
     </>
   )
